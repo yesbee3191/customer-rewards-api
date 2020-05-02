@@ -16,8 +16,8 @@ public class Customer {
     private String name;
     @Column(name = "bill")
     private Long bill;
-    @Column(name = "date")
-    private Date date;
+    @Column(name = "month")
+    private String month;
 
     public Long getId() {
         return id;
@@ -43,12 +43,12 @@ public class Customer {
         this.bill = bill;
     }
 
-    public Date getDate() {
-        return date;
+    public String getMonth() {
+        return month;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setMonth(String month) {
+        this.month = month;
     }
 
     @Override
@@ -57,7 +57,7 @@ public class Customer {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", bill=" + bill +
-                ", date=" + date +
+                ", month='" + month + '\'' +
                 '}';
     }
 }
