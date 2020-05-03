@@ -1,5 +1,6 @@
 package com.charter.customerrewards.controller;
 
+import com.charter.customerrewards.domain.CustomerRewards;
 import com.charter.customerrewards.entity.Customer;
 import com.charter.customerrewards.repository.CustomerRepository;
 import com.charter.customerrewards.service.CustomerrewardsService;
@@ -16,8 +17,9 @@ public class CustomerrewardsController {
     CustomerrewardsService customerrewardsService;
 
     @GetMapping("/customers")
-    public void getCustomerDetails(){
-        customerrewardsService.customerService();
+    public List<CustomerRewards> getCustomerDetails(){
+        System.out.println("Request Received");
+       return customerrewardsService.customerService();
     }
 
 

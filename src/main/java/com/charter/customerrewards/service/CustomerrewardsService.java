@@ -1,6 +1,7 @@
 package com.charter.customerrewards.service;
 
 import com.charter.customerrewards.builder.CustomerrewardsBuiilder;
+import com.charter.customerrewards.domain.CustomerRewards;
 import com.charter.customerrewards.entity.Customer;
 import com.charter.customerrewards.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,10 +19,10 @@ public class CustomerrewardsService {
     @Autowired
     CustomerrewardsBuiilder customerrewardsBuiilder;
 
-    public void customerService(){
+    public List<CustomerRewards> customerService(){
         List<Customer> customers = customerRepository.findAll();
         Set<String> cusNames =  customers.stream().map(e -> e.getName()).collect(Collectors.toSet());
-        customerrewardsBuiilder.customerInfoBuild(customers,cusNames);
-
+        System.out.println("Request Processed");
+        return customerrewardsBuiilder.customerInfoBuild(customers,cusNames);
     }
 }
